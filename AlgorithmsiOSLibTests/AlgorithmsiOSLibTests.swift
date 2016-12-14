@@ -26,6 +26,25 @@ class AlgorithmsiOSLibTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func queueTest() {
+        let intQueue = Queue<Int>()
+        
+        XCTAssertTrue(intQueue.isEmpty())
+        
+        intQueue.enqueue(item: 5)
+        intQueue.enqueue(item: 6)
+        intQueue.enqueue(item: 1)
+        intQueue.enqueue(item: 10)
+        
+        XCTAssertFalse(intQueue.isEmpty())
+        XCTAssert(intQueue.dequeue() == 5)
+        XCTAssert(intQueue.dequeue() == 6)
+        XCTAssert(intQueue.dequeue() == 1)
+        XCTAssert(intQueue.dequeue() == 10)
+        
+        XCTAssertTrue(intQueue.isEmpty())
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
