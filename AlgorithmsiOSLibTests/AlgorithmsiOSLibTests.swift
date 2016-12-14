@@ -26,7 +26,7 @@ class AlgorithmsiOSLibTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func queueTest() {
+    func testQueue() {
         let intQueue = Queue<Int>()
         
         XCTAssertTrue(intQueue.isEmpty())
@@ -43,6 +43,24 @@ class AlgorithmsiOSLibTests: XCTestCase {
         XCTAssert(intQueue.dequeue() == 10)
         
         XCTAssertTrue(intQueue.isEmpty())
+    }
+    
+    func testStack() {
+        let intStack = Stack<Int>()
+        
+        XCTAssertTrue(intStack.isEmpty())
+        
+        intStack.push(item: 8)
+        intStack.push(item: 3)
+        intStack.push(item: 10)
+        
+        XCTAssertFalse(intStack.isEmpty())
+        
+        XCTAssertTrue(intStack.pop() == 10)
+        XCTAssertTrue(intStack.pop() == 3)
+        XCTAssertTrue(intStack.pop() == 8)
+        
+        XCTAssertTrue(intStack.isEmpty())
     }
     
     func testPerformanceExample() {
