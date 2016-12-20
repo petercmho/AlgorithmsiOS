@@ -8,21 +8,38 @@
 
 import Foundation
 
+class StackNode<T> {
+    let item: T
+    var next: StackNode<T>?
+    
+    init(_ item: T, _ next: StackNode<T>?) {
+        self.item = item
+        self.next = next
+    }
+}
+
 class Stack<T> {
-    private var first: Node<T>?
+    private var count = 0
+    private var first: StackNode<T>?
     
     func isEmpty() -> Bool {
         return first == nil
     }
     
+    func size() -> Int {
+        return self.count
+    }
+    
     func push(item: T) {
         let oldFirst = first
-        first = Node(item: item, next: oldFirst)
+        first = StackNode(item, oldFirst)
+        count += 1
     }
     
     func pop() -> T? {
         let item = first?.item
         first = first?.next
+        count -= 1
         return item
     }
 }
