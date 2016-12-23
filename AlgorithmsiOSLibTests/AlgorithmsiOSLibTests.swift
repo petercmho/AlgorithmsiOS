@@ -132,6 +132,14 @@ class AlgorithmsiOSLibTests: XCTestCase {
         XCTAssertTrue(Graph.numberOfSelfLoops(graph) == 0)
     }
     
+    func testLSD() {
+        var testData = ["dab", "add", "cab", "fad", "fee", "bad", "dad", "bee", "fed", "bed", "ebb", "ace"]
+        LSD.indexCount(&testData, 3)
+        for s in testData {
+            print(s)
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

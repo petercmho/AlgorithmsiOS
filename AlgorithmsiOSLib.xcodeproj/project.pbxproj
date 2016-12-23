@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D0C3CAB1E0627A2008FB6B6 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C3CAA1E0627A2008FB6B6 /* Graph.swift */; };
 		5D0C3CAD1E076739008FB6B6 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C3CAC1E076739008FB6B6 /* Bag.swift */; };
-		5DAE839F1E001D4300C52AC6 /* AlgorithmsiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAE83951E001D4300C52AC6 /* AlgorithmsiOSLib.framework */; };
+		5D4B9D7F1E096A1600663111 /* LSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4B9D7E1E096A1600663111 /* LSD.swift */; };
+		5DAE839F1E001D4300C52AC6 /* AlgorithmsiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAE83951E001D4300C52AC6 /* AlgorithmsiOSLib.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5DAE83A41E001D4300C52AC6 /* AlgorithmsiOSLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE83A31E001D4300C52AC6 /* AlgorithmsiOSLibTests.swift */; };
 		5DAE83A61E001D4300C52AC6 /* AlgorithmsiOSLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DAE83981E001D4300C52AC6 /* AlgorithmsiOSLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DAE83B01E00287800C52AC6 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE83AF1E00287800C52AC6 /* Queue.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		5D0C3CAA1E0627A2008FB6B6 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		5D0C3CAC1E076739008FB6B6 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		5D4B9D7E1E096A1600663111 /* LSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSD.swift; sourceTree = "<group>"; };
 		5DAE83951E001D4300C52AC6 /* AlgorithmsiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlgorithmsiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DAE83981E001D4300C52AC6 /* AlgorithmsiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmsiOSLib.h; sourceTree = "<group>"; };
 		5DAE83991E001D4300C52AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				5DAE83B11E011ED800C52AC6 /* Stack.swift */,
 				5D0C3CAA1E0627A2008FB6B6 /* Graph.swift */,
 				5D0C3CAC1E076739008FB6B6 /* Bag.swift */,
+				5D4B9D7E1E096A1600663111 /* LSD.swift */,
 			);
 			path = AlgorithmsiOSLib;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				5D0C3CAB1E0627A2008FB6B6 /* Graph.swift in Sources */,
 				5DAE83B21E011ED800C52AC6 /* Stack.swift in Sources */,
 				5D0C3CAD1E076739008FB6B6 /* Bag.swift in Sources */,
+				5D4B9D7F1E096A1600663111 /* LSD.swift in Sources */,
 				5DAE83B01E00287800C52AC6 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
