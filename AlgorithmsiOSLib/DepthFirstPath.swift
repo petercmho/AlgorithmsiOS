@@ -9,19 +9,51 @@
 import Foundation
 
 class DepthFirstPath {
-    private let graph: Graph
-    private let v: Int
     private var marked: [Bool]
     private var edgeTo: [Int?]
+    private let s: Int
     
-    init(_ graph: Graph, _ v: Int) {
-        self.graph = graph
-        self.v = v
+    init(_ graph: Graph, _ s: Int) {
+        self.s = s
         self.marked = Array<Bool>(repeating: false, count: graph.V())
         self.edgeTo = Array<Int?>(repeating: nil, count: graph.V())
+        
+        dfs(graph, s)
     }
     
-    static func dfs(_ graph: Graph, _ v: Int) {
+    func dfs(_ graph: Graph, _ v: Int) {
+        let visit = Stack<Int>()
+        visit.push(v)
         
+        while let vertex = visit.pop() {
+            self.marked[vertex] = true
+            for w in graph.adj(vertex) {
+                if !self.marked[w] {
+                    self.edgeTo[w] = vertex
+                    visit.push(w)
+                }
+            }
+        }
+    }
+    
+    func hasPathTo(_ v: Int) -> Bool {
+        return marked[v]
+    }
+    
+    func pathTo(_ v: Int) -> [Int] {
+        let path = Stack<Int>()
+        var w = v
+        path.push(w)
+        while let v = edgeTo[w] {
+            path.push(v)
+            w = v
+        }
+        
+        var output = Array<Int>(repeating: 0, count: path.size())
+        for (i, v) in path.enumerated() {
+            output[i] = v
+        }
+        
+        return output
     }
 }

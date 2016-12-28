@@ -51,9 +51,9 @@ class AlgorithmsiOSLibTests: XCTestCase {
         XCTAssertTrue(intStack.isEmpty())
         XCTAssertTrue(intStack.size() == 0)
         
-        intStack.push(item: 8)
-        intStack.push(item: 3)
-        intStack.push(item: 10)
+        intStack.push(8)
+        intStack.push(3)
+        intStack.push(10)
         
         XCTAssertTrue(intStack.size() == 3)
         XCTAssertFalse(intStack.isEmpty())
@@ -87,7 +87,7 @@ class AlgorithmsiOSLibTests: XCTestCase {
         }
     }
     
-    func testGraph() {
+    func createSampleGraph1() -> Graph {
         let graph = Graph(13)
         graph.addEdge(0, 1)
         graph.addEdge(0, 2)
@@ -102,6 +102,12 @@ class AlgorithmsiOSLibTests: XCTestCase {
         graph.addEdge(9, 11)
         graph.addEdge(9, 12)
         graph.addEdge(11, 12)
+        
+        return graph
+    }
+    
+    func testGraph() {
+        let graph = createSampleGraph1()
         
         XCTAssertTrue(graph.V() == 13)
         XCTAssertTrue(graph.E() == 13)
@@ -137,6 +143,15 @@ class AlgorithmsiOSLibTests: XCTestCase {
         LSD.indexCount(&testData, 3)
         for s in testData {
             print(s)
+        }
+    }
+    
+    func testDepthFirstPath() {
+        let graph = createSampleGraph1()
+        let depthFirstPath = DepthFirstPath(graph, 1)
+        
+        for v in depthFirstPath.pathTo(3) {
+            print(v)
         }
     }
     

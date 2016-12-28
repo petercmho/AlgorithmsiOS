@@ -18,7 +18,7 @@ class StackNode<T> {
     }
 }
 
-class Stack<T> {
+class Stack<T>: Sequence {
     private var count = 0
     private var first: StackNode<T>?
     
@@ -30,7 +30,7 @@ class Stack<T> {
         return self.count
     }
     
-    func push(item: T) {
+    func push(_ item: T) {
         let oldFirst = first
         first = StackNode(item, oldFirst)
         count += 1
@@ -41,5 +41,27 @@ class Stack<T> {
         first = first?.next
         count -= 1
         return item
+    }
+    
+    func makeIterator() -> StackIterator<T> {
+        return StackIterator(self.first)
+    }
+//    
+//    func enumerated() -> EnumeratedSequence<Stack<T>> {
+//        <#code#>
+//    }
+}
+
+class StackIterator<T>: IteratorProtocol {
+    var current: StackNode<T>?
+    
+    init(_ first: StackNode<T>?) {
+        self.current = first
+    }
+    
+    func next() -> T? {
+        let lastCurrent = self.current
+        self.current = lastCurrent?.next
+        return lastCurrent?.item
     }
 }
