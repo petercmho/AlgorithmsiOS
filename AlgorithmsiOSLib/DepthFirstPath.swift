@@ -43,11 +43,11 @@ class DepthFirstPath {
     func pathTo(_ v: Int) -> [Int] {
         let path = Stack<Int>()
         var w = v
-        path.push(w)
         while let v = edgeTo[w] {
-            path.push(v)
+            path.push(w)
             w = v
         }
+        path.push(s)
         
         var output = Array<Int>(repeating: 0, count: path.size())
         for (i, v) in path.enumerated() {
