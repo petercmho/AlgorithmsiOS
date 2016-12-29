@@ -49,11 +49,6 @@ class DepthFirstPath {
         }
         path.push(s)
         
-        var output = Array<Int>(repeating: 0, count: path.size())
-        for (i, v) in path.enumerated() {
-            output[i] = v
-        }
-        
-        return output
+        return Array<Int>(path)
     }
 }
