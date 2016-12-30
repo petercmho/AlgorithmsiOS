@@ -26,7 +26,7 @@ class Queue <T> {
         return first == nil
     }
     
-    func enqueue(item: T) {
+    func enqueue(_ item: T) {
         let oldLast = last
         last = Node<T>(item: item, next: nil)
         if isEmpty() {

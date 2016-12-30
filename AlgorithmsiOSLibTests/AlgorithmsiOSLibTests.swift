@@ -31,10 +31,10 @@ class AlgorithmsiOSLibTests: XCTestCase {
         
         XCTAssertTrue(intQueue.isEmpty())
         
-        intQueue.enqueue(item: 5)
-        intQueue.enqueue(item: 6)
-        intQueue.enqueue(item: 1)
-        intQueue.enqueue(item: 10)
+        intQueue.enqueue(5)
+        intQueue.enqueue(6)
+        intQueue.enqueue(1)
+        intQueue.enqueue(10)
         
         XCTAssertFalse(intQueue.isEmpty())
         XCTAssert(intQueue.dequeue() == 5)
@@ -150,7 +150,18 @@ class AlgorithmsiOSLibTests: XCTestCase {
         let graph = createSampleGraph1()
         let depthFirstPath = DepthFirstPath(graph, 1)
         
+        print("Depth First Path from 1 to 3")
         for v in depthFirstPath.pathTo(3) {
+            print(v)
+        }
+    }
+    
+    func testBreadthFirstPath() {
+        let graph = createSampleGraph1()
+        let breadthFirstPath = BreadthFirstPath(graph, 1)
+        
+        print("Breadth First Path from 1 to 3")
+        for v in breadthFirstPath.pathTo(3) {
             print(v)
         }
     }
