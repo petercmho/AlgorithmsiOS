@@ -22,23 +22,40 @@ class BreadthFirstPath {
         bfs(graph, s)
     }
     
-    func bfs(_ graph: Graph, _ v: Int) {
+//    func bfs(_ graph: Graph, _ v: Int) {
+//        let visit = Queue<Int>()
+//        var count = 0
+//        visit.enqueue(v)
+//        self.level[v] = count
+//        
+//        while let w = visit.dequeue() {
+//            if !marked[w] {
+//                marked[w] = true
+//                for i in graph.adj(w) {
+//                    if !self.marked[i] {
+//                        visit.enqueue(i)
+//                        edgeTo[i] = w
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    func bfs(_ graph: Graph, _ s: Int) {
         let visit = Queue<Int>()
-        var count = 0
-        visit.enqueue(v)
-        self.level[v] = count
-        
+        self.marked[s] = true
+        visit.enqueue(s)
+    
         while let w = visit.dequeue() {
-            if !marked[w] {
-                marked[w] = true
-                for i in graph.adj(w) {
-                    if !self.marked[i] {
-                        visit.enqueue(i)
-                        edgeTo[i] = w
-                    }
+            for i in graph.adj(w) {
+                if !self.marked[i] {
+                    visit.enqueue(i)
+                    self.marked[i] = true
+                    self.edgeTo[i] = w
                 }
             }
         }
+        
     }
     
     func hasPathTo(_ v: Int) -> Bool {

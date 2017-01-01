@@ -150,8 +150,8 @@ class AlgorithmsiOSLibTests: XCTestCase {
         let graph = createSampleGraph1()
         let depthFirstPath = DepthFirstPath(graph, 1)
         
-        print("Depth First Path from 1 to 3")
-        for v in depthFirstPath.pathTo(3) {
+        print("Depth First Path from 1 to 4")
+        for v in depthFirstPath.pathTo(4) {
             print(v)
         }
     }
@@ -160,8 +160,8 @@ class AlgorithmsiOSLibTests: XCTestCase {
         let graph = createSampleGraph1()
         let breadthFirstPath = BreadthFirstPath(graph, 1)
         
-        print("Breadth First Path from 1 to 3")
-        for v in breadthFirstPath.pathTo(3) {
+        print("Breadth First Path from 1 to 4")
+        for v in breadthFirstPath.pathTo(4) {
             print(v)
         }
     }
