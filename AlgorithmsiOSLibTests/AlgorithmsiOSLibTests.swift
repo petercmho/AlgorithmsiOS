@@ -170,15 +170,15 @@ class AlgorithmsiOSLibTests: XCTestCase {
             print(v)
         }
         
-        XCTAssertTrue(breadthFirstPath.level(1) == 0)
-        XCTAssertTrue(breadthFirstPath.level(0) == 1)
-        XCTAssertTrue(breadthFirstPath.level(6) == 2)
-        XCTAssertTrue(breadthFirstPath.level(4) == 3)
-        XCTAssertNil(breadthFirstPath.level(7))
-        XCTAssertTrue(breadthFirstPath.level(5) == 2)
-        XCTAssertTrue(breadthFirstPath.level(3) == 3)
+        XCTAssertTrue(breadthFirstPath.distTo(1) == 0)
+        XCTAssertTrue(breadthFirstPath.distTo(0) == 1)
+        XCTAssertTrue(breadthFirstPath.distTo(6) == 2)
+        XCTAssertTrue(breadthFirstPath.distTo(4) == 3)
+        XCTAssertNil(breadthFirstPath.distTo(7))
+        XCTAssertTrue(breadthFirstPath.distTo(5) == 2)
+        XCTAssertTrue(breadthFirstPath.distTo(3) == 3)
         
-        XCTAssertFalse(breadthFirstPath.level(3) == 4)
+        XCTAssertFalse(breadthFirstPath.distTo(3) == 4)
     }
     
     func testPerformanceExample() {
