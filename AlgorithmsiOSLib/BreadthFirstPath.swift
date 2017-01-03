@@ -43,22 +43,19 @@ class BreadthFirstPath {
     
     func bfs(_ graph: Graph, _ s: Int) {
         let visit = Queue<Int>()
-        var pos = 0
         self.marked[s] = true
-        self.level[s] = pos
-        pos += 1
+        self.level[s] = 0
         visit.enqueue(s)
     
-        while let w = visit.dequeue() {
+        while let w = visit.dequeue(), let pos = self.level[w] {
             for i in graph.adj(w) {
                 if !self.marked[i] {
                     visit.enqueue(i)
                     self.marked[i] = true
                     self.edgeTo[i] = w
-                    self.level[i] = pos
+                    self.level[i] = pos + 1
                 }
             }
-            pos += 1
         }
         
     }
