@@ -164,6 +164,11 @@ class AlgorithmsiOSLibTests: XCTestCase {
         for v in breadthFirstPath.pathTo(4) {
             print(v)
         }
+        
+        XCTAssertTrue(breadthFirstPath.level(1) == 0)
+        XCTAssertTrue(breadthFirstPath.level(0) == 1)
+        XCTAssertTrue(breadthFirstPath.level(6) == 2)
+        XCTAssertTrue(breadthFirstPath.level(4) == 3)
     }
     
     func testPerformanceExample() {

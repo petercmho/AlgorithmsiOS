@@ -11,13 +11,13 @@ import Foundation
 class BreadthFirstPath {
     private var marked: [Bool]
     private var edgeTo: [Int?]
-    private var level: [Int]
+    private var level: [Int?]
     private let s: Int
     
     init(_ graph: Graph, _ s: Int) {
         self.marked = Array<Bool>(repeating: false, count: graph.V())
         self.edgeTo = Array<Int?>(repeating: nil, count: graph.V())
-        self.level = Array<Int>(repeating: 0, count: graph.V())
+        self.level = Array<Int?>(repeating: nil, count: graph.V())
         self.s = s
         bfs(graph, s)
     }
@@ -43,7 +43,10 @@ class BreadthFirstPath {
     
     func bfs(_ graph: Graph, _ s: Int) {
         let visit = Queue<Int>()
+        var pos = 0
         self.marked[s] = true
+        self.level[s] = pos
+        pos += 1
         visit.enqueue(s)
     
         while let w = visit.dequeue() {
@@ -52,8 +55,10 @@ class BreadthFirstPath {
                     visit.enqueue(i)
                     self.marked[i] = true
                     self.edgeTo[i] = w
+                    self.level[i] = pos
                 }
             }
+            pos += 1
         }
         
     }
@@ -72,5 +77,9 @@ class BreadthFirstPath {
         reversePath.push(s)
         
         return Array<Int>(reversePath)
+    }
+    
+    func level(_ v: Int) -> Int? {
+        return self.level[v]
     }
 }
