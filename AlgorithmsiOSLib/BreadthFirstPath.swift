@@ -57,7 +57,6 @@ class BreadthFirstPath {
                 }
             }
         }
-        
     }
     
     func hasPathTo(_ v: Int) -> Bool {
