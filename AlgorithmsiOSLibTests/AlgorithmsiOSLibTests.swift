@@ -181,6 +181,27 @@ class AlgorithmsiOSLibTests: XCTestCase {
         XCTAssertFalse(breadthFirstPath.distTo(3) == 4)
     }
     
+    func testConnectedComponent() {
+        let graph = createSampleGraph1()
+        let connectedComponent = ConnectedComponents(graph)
+        
+        XCTAssertTrue(connectedComponent.isConnected(0, 1))
+        XCTAssertTrue(connectedComponent.isConnected(0, 5))
+        XCTAssertTrue(connectedComponent.isConnected(0, 6))
+        XCTAssertTrue(connectedComponent.isConnected(0, 2))
+        XCTAssertTrue(connectedComponent.isConnected(0, 3))
+        XCTAssertTrue(connectedComponent.isConnected(0, 4))
+        XCTAssertTrue(connectedComponent.isConnected(7, 8))
+        XCTAssertTrue(connectedComponent.isConnected(9, 10))
+        XCTAssertTrue(connectedComponent.isConnected(10, 11))
+        XCTAssertTrue(connectedComponent.isConnected(10, 12))
+        XCTAssertTrue(connectedComponent.getCount() == 3)
+        XCTAssertTrue(connectedComponent.getSize(0) == 7)
+        XCTAssertTrue(connectedComponent.getSize(7) == 2)
+        XCTAssertTrue(connectedComponent.getSize(10) == 4)
+        XCTAssertFalse(connectedComponent.getSize(1) == 8)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
