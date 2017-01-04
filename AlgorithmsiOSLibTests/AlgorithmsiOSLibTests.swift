@@ -106,6 +106,21 @@ class AlgorithmsiOSLibTests: XCTestCase {
         return graph
     }
     
+    func createBipartiteGraph() -> Graph {
+        let graph = Graph(7)
+        graph.addEdge(0, 1)
+        graph.addEdge(0, 2)
+        graph.addEdge(0, 5)
+        graph.addEdge(0, 6)
+        graph.addEdge(1, 3)
+        graph.addEdge(2, 3)
+        graph.addEdge(2, 4)
+        graph.addEdge(4, 5)
+        graph.addEdge(4, 6)
+        
+        return graph
+    }
+    
     func testGraph() {
         let graph = createSampleGraph1()
         
@@ -200,6 +215,17 @@ class AlgorithmsiOSLibTests: XCTestCase {
         XCTAssertTrue(connectedComponent.getSize(7) == 2)
         XCTAssertTrue(connectedComponent.getSize(10) == 4)
         XCTAssertFalse(connectedComponent.getSize(1) == 8)
+    }
+    
+    func testBipartite() {
+        var graph = createBipartiteGraph()
+        var bipartite = Bipartite(graph)
+        
+        XCTAssertTrue(bipartite.isBipartite())
+        
+        graph = createSampleGraph1()
+        bipartite = Bipartite(graph)
+        XCTAssertFalse(bipartite.isBipartite())
     }
     
     func testPerformanceExample() {
