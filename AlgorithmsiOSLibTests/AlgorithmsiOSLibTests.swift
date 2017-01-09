@@ -218,14 +218,20 @@ class AlgorithmsiOSLibTests: XCTestCase {
     }
     
     func testBipartite() {
+        print("Test Biparatite graph")
         var graph = createBipartiteGraph()
         var bipartite = Bipartite(graph)
         
         XCTAssertTrue(bipartite.isBipartite())
         
+        print("Test non-bipartite graph")
         graph = createSampleGraph1()
         bipartite = Bipartite(graph)
         XCTAssertFalse(bipartite.isBipartite())
+        print("The odd number cycle is ")
+        for i in bipartite.getCycle() {
+            print(i)
+        }
     }
     
     func testPerformanceExample() {
