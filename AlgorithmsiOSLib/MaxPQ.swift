@@ -8,8 +8,12 @@
 
 import Foundation
 
-class MaxPQ<Key>
-    where Key: Comparable {
+protocol Init {
+    init()
+}
+
+class MaxPQ<Key: Comparable>
+where Key: Init {
     func insert(v: Key) {
         
     }

@@ -62,15 +62,27 @@ class BST<Key: Comparable, Value>: Sequence, IteratorProtocol {
             delete(key)
             return
         }
+        self.root = put(node: self.root, key: key!, val: val!)
     }
     
-    func deleteMin() -> Node? {
-        if isEmpty() { return nil }
+    private func put(node: Node?, key: Key, val: Value) -> Node? {
+        if node == nil { return Node(key: key, val: val, size: 1) }
+        if key < node!.key { node!.left = put(node: node!.left, key: key, val: val) }
+        else if key > node!.key { node!.right = put(node: node!.right, key: key, val: val) }
+        else { node!.val = val }
+        node!.size = size(node!.left) + size(node!.right) + 1
+        return node
+    }
+    
+    func deleteMin() {
+        if isEmpty() { return }
         self.root = deleteMin(node: self.root)
     }
     
     private func deleteMin(node: Node?) -> Node? {
-        
+        if node?.left == nil { return node?.right }
+        node?.left = deleteMin(node: node?.left)
+        return node
     }
     
     func delete(_ key: Key?) {
@@ -87,10 +99,13 @@ class BST<Key: Comparable, Value>: Sequence, IteratorProtocol {
         else {
             if node.right == nil { return node.left }
             if node.left == nil { return node.right }
-            var t = node;
+            let t = node;
             node = min(node: t.right)!
             node.right = deleteMin(node: t.right)
+            node.left = t.left
         }
+        node.size = size(node.left) + size(node.right) + 1
+        return node
     }
     
     func min() -> Key? {

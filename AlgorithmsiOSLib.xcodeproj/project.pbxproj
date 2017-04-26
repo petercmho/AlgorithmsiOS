@@ -15,12 +15,12 @@
 		5D61BEA51E1BB85C00C26C63 /* ConnectedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D61BEA41E1BB85C00C26C63 /* ConnectedComponents.swift */; };
 		5D61BEA71E1CD79F00C26C63 /* Bipartite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D61BEA61E1CD79F00C26C63 /* Bipartite.swift */; };
 		5D61BEA91E24DC0800C26C63 /* MaxPQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D61BEA81E24DC0800C26C63 /* MaxPQ.swift */; };
+		5D65F1671EB04C65005C178D /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D65F1661EB04C65005C178D /* BST.swift */; };
 		5DAE839F1E001D4300C52AC6 /* AlgorithmsiOSLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAE83951E001D4300C52AC6 /* AlgorithmsiOSLib.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5DAE83A41E001D4300C52AC6 /* AlgorithmsiOSLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE83A31E001D4300C52AC6 /* AlgorithmsiOSLibTests.swift */; };
 		5DAE83A61E001D4300C52AC6 /* AlgorithmsiOSLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DAE83981E001D4300C52AC6 /* AlgorithmsiOSLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DAE83B01E00287800C52AC6 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE83AF1E00287800C52AC6 /* Queue.swift */; };
 		5DAE83B21E011ED800C52AC6 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAE83B11E011ED800C52AC6 /* Stack.swift */; };
-		A0CEBBD41EAFF70500A7799D /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CEBBD31EAFF70500A7799D /* BST.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 		5D61BEA41E1BB85C00C26C63 /* ConnectedComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedComponents.swift; sourceTree = "<group>"; };
 		5D61BEA61E1CD79F00C26C63 /* Bipartite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bipartite.swift; sourceTree = "<group>"; };
 		5D61BEA81E24DC0800C26C63 /* MaxPQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxPQ.swift; sourceTree = "<group>"; };
+		5D65F1661EB04C65005C178D /* BST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
 		5DAE83951E001D4300C52AC6 /* AlgorithmsiOSLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlgorithmsiOSLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DAE83981E001D4300C52AC6 /* AlgorithmsiOSLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmsiOSLib.h; sourceTree = "<group>"; };
 		5DAE83991E001D4300C52AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		5DAE83971E001D4300C52AC6 /* AlgorithmsiOSLib */ = {
 			isa = PBXGroup;
 			children = (
+				5D65F1661EB04C65005C178D /* BST.swift */,
 				5DAE83981E001D4300C52AC6 /* AlgorithmsiOSLib.h */,
 				5DAE83991E001D4300C52AC6 /* Info.plist */,
 				5DAE83AF1E00287800C52AC6 /* Queue.swift */,
@@ -232,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D0C3CAB1E0627A2008FB6B6 /* Graph.swift in Sources */,
+				5D65F1671EB04C65005C178D /* BST.swift in Sources */,
 				5DAE83B21E011ED800C52AC6 /* Stack.swift in Sources */,
 				5D2BA16C1E103A4A002D366A /* DepthFirstPath.swift in Sources */,
 				5D61BEA91E24DC0800C26C63 /* MaxPQ.swift in Sources */,
