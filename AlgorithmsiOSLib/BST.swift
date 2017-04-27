@@ -117,4 +117,17 @@ class BST<Key: Comparable, Value>: Sequence, IteratorProtocol {
         if node?.left == nil { return node }
         else { return min(node: node?.left) }
     }
+    
+    func rank(key: Key) -> Int {
+        return rank(node: self.root, key: key)
+    }
+    
+    private func rank(node: Node?, key: Key) -> Int {
+        if node == nil { return 0 }
+        if key < node!.key { return rank(node: node!.left, key: key) }
+        else if key > node!.key { return 1 + size(node!.left) + rank(node: node!.right, key: key) }
+        else {
+            return size(node!.left)
+        }
+    }
 }
