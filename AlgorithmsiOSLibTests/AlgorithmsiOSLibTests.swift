@@ -166,7 +166,9 @@ class AlgorithmsiOSLibTests: XCTestCase {
         let depthFirstPath = DepthFirstPath(graph, 1)
         
         print("Depth First Path from 1 to 4")
-        for v in depthFirstPath.pathTo(4) {
+        
+        guard let pathTo = depthFirstPath.pathTo(4) else { return }
+        for v in pathTo {
             print(v)
         }
     }
