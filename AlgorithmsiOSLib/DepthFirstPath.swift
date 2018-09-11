@@ -22,16 +22,16 @@ class DepthFirstPath {
     }
     
     func dfs(_ graph: Graph, _ v: Int) {
-        let visit = Stack<Int>()
-        visit.push(v)
+        let visit = Stack<(Int, ListIterator<Int>)>()
+        visit.push((v, graph.adj(v).makeIterator()))
+        marked[v] = true;
         
-        while let vertex = visit.pop() {
-            self.marked[vertex] = true
-            for w in graph.adj(vertex) {
-                if !self.marked[w] {
-                    self.edgeTo[w] = vertex
-                    visit.push(w)
-                }
+        while let (v, itor) = visit.pop() {
+            if let w = itor.next(), !marked[w] {
+                marked[w] = true;
+                edgeTo[w] = v;
+                visit.push((v, itor))
+                visit.push((w , graph.adj(w).makeIterator()))
             }
         }
     }
