@@ -85,6 +85,15 @@ class AlgorithmsiOSLibTests: XCTestCase {
             print("Bag[\(index)] = \(i)")
             index += 1
         }
+        
+        intBag.remove(8)
+        XCTAssertTrue(intBag.size() == size - 1)
+        
+        index = 1
+        for i in intBag{
+            print("Bag[\(index)] = \(i)")
+            index += 1
+        }
     }
     
     func createSampleGraph1() -> Graph {

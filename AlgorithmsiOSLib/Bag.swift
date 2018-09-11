@@ -19,7 +19,7 @@ class BagNode<T> {
     }
 }
 
-class Bag<T>: Sequence {
+class Bag<T : Equatable>: Sequence {
     private var count = 0
     private var first: BagNode<T>?
     
@@ -31,6 +31,22 @@ class Bag<T>: Sequence {
     
     func size() -> Int {
         return self.count
+    }
+    
+    func remove(_ x: T) {
+        first = removeItem(x, from: first)
+    }
+    
+    private func removeItem(_ x: T, from: BagNode<T>?) -> BagNode<T>? {
+        guard let node = from else { return nil }
+        
+        if node.item == x {
+            self.count -= 1
+            return node.next
+        } else {
+            node.next = removeItem(x, from: node.next)
+            return node
+        }
     }
     
     // MARK: - Sequence
