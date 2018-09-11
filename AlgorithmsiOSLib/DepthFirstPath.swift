@@ -36,6 +36,21 @@ class DepthFirstPath {
         }
     }
     
+    func dfsNonRecursive(_ graph: Graph, _ v: Int) {
+        let visit = Stack<Int>()
+        visit.push(v);
+        
+        while let v = visit.pop() {
+            marked[v] = true;
+            for w in graph.adj(v) {
+                if !marked[w] {
+                    visit.push(w);
+                    edgeTo[w] = v;
+                }
+            }
+        }
+    }
+    
     func dfsNoStack(_ g: Graph, _ v: Int) {
         marked[v] = true;
         for w in g.adj(v) {
