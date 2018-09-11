@@ -36,11 +36,23 @@ class DepthFirstPath {
         }
     }
     
+    func dfsNoStack(_ g: Graph, _ v: Int) {
+        marked[v] = true;
+        for w in g.adj(v) {
+            if !marked[w] {
+                dfsNoStack(g, w)
+                edgeTo[w] = v
+            }
+        }
+    }
+    
     func hasPathTo(_ v: Int) -> Bool {
         return marked[v]
     }
     
-    func pathTo(_ v: Int) -> [Int] {
+    func pathTo(_ v: Int) -> [Int]? {
+        if !hasPathTo(v) { return nil };
+        
         let path = Stack<Int>()
         var w = v
         while let v = edgeTo[w] {
